@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3>{{title}}</h3>
-    <button v-on:click="$emit('enlarge-text')">Enlarge</button>
+    <button v-on:click="$emit('enlarge-text',0.1)">Enlarge</button>
     <p>{{content}}</p>
   </div>
 </template>

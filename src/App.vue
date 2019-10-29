@@ -5,6 +5,7 @@
     <ButtonCounter />
     <div :style="{fontSize: postFontSize + 'em'}">
       <BlogPost
+        v-on:enlarge-text="handleEnlarge"
         v-for="blog in blogs"
         v-bind:key="blog.id"
         v-bind:title="blog.title"
@@ -50,16 +51,16 @@ export default {
   },
   methods: {
     created () {
-      this.$on('enlarge-text',()=>{
-        this.handleEnlarge();
-      });
+      // this.$on('enlarge-text',()=>{
+      //   this.handleEnlarge();
+      // });
     },
     mounted () {
 
     },
-    handleEnlarge () {
-      console.log(`handleEnlarge`);
-      this.postFontSize += 0.1
+    handleEnlarge (e) {
+      console.log(`handleEnlarge - ${e}`);
+      this.postFontSize += e
     }
   }
 }
