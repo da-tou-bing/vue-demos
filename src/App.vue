@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-      <Commucation></Commucation>
+      <!-- <Commucation></Commucation> -->
+      <form-test></form-test>
   </div>
 </template>
 
 <script>
 import Commucation from './components/communication'
+import FormTest from './components/form'
 
 export default {
   name: 'app',
   components: {
-    Commucation,
+    Commucation,FormTest
   },
   data () {
     return {

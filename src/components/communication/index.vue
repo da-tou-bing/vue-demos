@@ -1,19 +1,24 @@
 <template>
   <div>
     <child1 msg="我是儿子1" @clickTitle="clickChild1"></child1>
-    <child1 msg="Vue的props可以是函数么" :testAction="testAction"></child1>
     <child1 extra="我是额外attr"></child1>
+    <child1 msg="Vue的props可以是函数么" :testAction="testAction"></child1>
+    <child1>
+      <grand-child></grand-child>
+    </child1>
+    
   </div>
 </template>
 
 <script>
   import child1 from './child1';
+  import GrandChild from './GrandChild';
   export default {
     provide:{
       rootData:'最根节点的数据'
     },
     components:{
-      child1
+      child1,GrandChild
     },
     created(){
 

@@ -2,20 +2,17 @@
   <div>
       <h1 @click="$emit('clickTitle')">child1</h1>
       <p @click="clickP">{{message}} <span style="color:red;">{{$attrs.extra}}</span></p>
-      <GrandChild></GrandChild>
+      <slot></slot>
   </div>
 </template>
 
 <script>
-  import GrandChild from './GrandChild'
-
   export default {
     props : {
       msg :String,
       testAction:Function
     },
     components:{
-      GrandChild
     },
     data(){
       return {
