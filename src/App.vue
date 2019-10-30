@@ -1,31 +1,16 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <HelloWorld msg="Welcome to" />
-    <ButtonCounter />
-    <div :style="{fontSize: postFontSize + 'em'}">
-      <BlogPost
-        @enlarge-text="handleEnlarge"
-        v-for="blog in blogs"
-        v-bind:key="blog.id"
-        v-bind:title="blog.title"
-        v-bind:content="blog.content"
-      ></BlogPost>
-    </div>
+      <Commucation></Commucation>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import ButtonCounter from './components/ButtonCounter.vue'
-import BlogPost from './components/BlogPost.vue'
+import Commucation from './components/communication'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    ButtonCounter,
-    BlogPost
+    Commucation,
   },
   data () {
     return {
@@ -50,13 +35,6 @@ export default {
     }
   },
   methods: {
-    created () {
-      // this.$on('enlarge-text',()=>{
-      //   this.handleEnlarge();
-      // });
-    },
-    mounted () {
-    },
     handleEnlarge (e) {
       console.log(`handleEnlarge - ${e}`);
       this.postFontSize += e
