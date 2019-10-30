@@ -5,7 +5,7 @@
     <ButtonCounter />
     <div :style="{fontSize: postFontSize + 'em'}">
       <BlogPost
-        v-on:enlarge-text="handleEnlarge"
+        @enlarge-text="handleEnlarge"
         v-for="blog in blogs"
         v-bind:key="blog.id"
         v-bind:title="blog.title"
@@ -27,7 +27,7 @@ export default {
     ButtonCounter,
     BlogPost
   },
-  data: function () {
+  data () {
     return {
       postFontSize: 1,
       blogs: [
@@ -56,7 +56,6 @@ export default {
       // });
     },
     mounted () {
-
     },
     handleEnlarge (e) {
       console.log(`handleEnlarge - ${e}`);
