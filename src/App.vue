@@ -1,18 +1,20 @@
 <template>
   <div id="app">
       <!-- <Commucation></Commucation> -->
-      <form-test></form-test>
+      <!-- <form-test></form-test> -->
+      <v-model-test></v-model-test>
   </div>
 </template>
 
 <script>
 import Commucation from './components/communication'
 import FormTest from './components/form'
+import VModelTest from './components/v-mode'
 
 export default {
   name: 'app',
   components: {
-    Commucation,FormTest
+    Commucation,FormTest,VModelTest
   },
   data () {
     return {
