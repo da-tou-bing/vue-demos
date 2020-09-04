@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p>{{message}}</p>
+    <div :id="message"></div>
+    <ul>
+      <li v-for="todo in todos">
+        <span v-if="!todo.finished">{{todo.title}}</span>
+        <span v-else style="text-decoration:line-through;">{{todo.title}}</span>
+        <button v-show="!todo.finished" @click="">删除</button>
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+ <script>
+   const v = new Vue({
+     el:'#app',
+     data:{
+       message: 'hello vue22',
+       todos:[
+         {
+           title: '任务1',
+           finished: false
+         },
+         {
+           title: '任务2',
+           finished: true
+         },
+         {
+           title: '任务3',
+           finished: false
+         },
+      ]
+     }
+   });
+ </script>
+</body>
+</html>
